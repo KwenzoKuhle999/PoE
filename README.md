@@ -54,3 +54,54 @@ Session Management
 - **Session Duration** - Records time spent in session
 - **Statistics Command** - View session summary anytime
 - **Exit Summary** - Comprehensive farewell with session data
+
+
+poe_p2
+# Cybersecurity AI Assistant Terminal (POE Part 2)
+
+An interactive, matrix-themed WPF educational application written in C# designed to mentor users on core cybersecurity vulnerabilities, analyze conversational sentiments, and test operational retention using dynamic assessment frameworks.
+
+---
+
+##  Architecture & Separation of Concerns
+The application strictly follows the **Single Responsibility Principle (SRP)** by separating logic engines entirely away from the user interface boundaries:
+
+1. **`MainWindow.xaml.cs`** - Orchestrates UI view grids, element visibilities, and terminal logs.
+2. **`AudioManager.cs`** - Generates and streams background speech synthesis wave files natively.
+3. **`SentimentAnalyzer.cs`** - Evaluates input strings for user mood states (worried, frustrated, curious).
+4. **`TopicDetector.cs`** - Houses the dictionary libraries explaining phishing, malware, and injection types.
+5. **`MemoryManager.cs`** - Directly handles flat file-system persistence (`memory.txt`) for tracking user interests.
+6. **`QuizManager.cs`** - Builds evaluation objects, evaluates user answers, and tracks grading metrics.
+
+---
+
+##  Features Breakdown
+* **Dynamic Content Mapping:** Identifies hidden cybersecurity technical keywords in human conversations.
+* **Empathetic AI Core:** Adapts the bot output header depending on the user's frustration or worry patterns.
+* **Audio Welcome Integration:** Auto-synthesizes a hardware-independent native `.wav` audio greeting upon login confirmation.
+* **Interactive Assessment Module:** Generates focused interactive multiple-choice tests targeting the user's latest historical interactions.
+* **State Persistence:** Stores tracking parameters locally to remember favorite topics between individual sessions.
+
+---
+
+##  Installation & Setup Instructions
+
+### Prerequisites
+* Windows 10/11 OS
+* Visual Studio (2022 recommended)
+* **.NET Framework 4.7.2+** or **.NET Core 6.0/8.0** workload configuration
+
+### Running the Project
+1. Open the project solution (`poe_p2.sln`) inside Visual Studio.
+2. Ensure `System.Speech` is referenced properly inside your project reference explorer nodes.
+3. Verify that the file paths pointing to the media resources inside `AudioManager.cs` coordinate cleanly with your local user configuration directories.
+4. Press `F5` or click **Start / Debug** to spin up the application terminal shell workspace.
+
+---
+
+## Unit Testing Core Logic
+The stability of our decoupled classes is validated using an **MSTest Core Framework** suite project (`poe_p2_tests`). 
+
+### Running Automated Diagnostic Tests:
+1. Navigate to the top taskbar options inside Visual Studio and select **Test** -> **Run All Tests**.
+2. Open your project **Test Explorer** tab (`Ctrl + E, T`) to view execution status profiles covering sentiment detections, database lookups, and score processing counters.
